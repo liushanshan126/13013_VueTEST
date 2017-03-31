@@ -26,12 +26,32 @@
       @keyup.enter='xxx'
 -->
 <div id="app">
+  <p>{{msg}}</p>
+  <p>{{{msg}}}</p>
+  <p>{{msg.to UpperCase()}}</p>
+  <p>{{123.123 | currency 'RMB'}}</p>
+  <a href="{{url}}">百度</a><br/>
 
+  <a v-bind:href="url">百度</a><br/>
+  <a :href="url">百度</a>
+  <input type="text" @keyup.enter="test1()">
 
 </div>
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  new Vue({
+      el : '#app',
+      data : {
+        msg:'<a href="http://www.atguigu.com">to atguigu</a>'
+        url:'http//www.baidu.com'
+      },
+      methods : {
+        test1(event){
+          alert('test1()'+event.target.value)
+        }
+      }
+  });
 </script>
 </body>
 </html>
