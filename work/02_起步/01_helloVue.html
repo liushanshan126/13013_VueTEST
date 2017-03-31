@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_helloVue</title>
+</head>
+<body>
+
+<!--
+  1. 引入Vue.js
+  2. 创建Vue对象
+    el : 指定根element(选择器)
+    data : 初始化数据(页面可以访问)
+  3. 双向数据绑定 : v-model
+  4. 显示数据 : {{xxx}}
+  5. 理解vue的mvvm实现
+
+  注意: 需要在webstorm中安装vue.js插件
+-->
+<div id="demo">
+  <input type="text" v-model="msg"><!--显示初始化数据,指令-->
+  <p>{{msg}}</p><!--表达式-->
+
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el:'#demo',
+    data:{
+      msg:'atguigu'
+    }//数据，mvvm,m页面用来显示的数据，两种类型，一种是对象，一种是函数
+  })
+</script>
+</body>
+</html>
